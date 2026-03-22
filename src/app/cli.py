@@ -1,12 +1,12 @@
 import argparse
 import sys
 
-from pip._internal.utils.misc import tabulate
+from tabulate import tabulate
 
 from src.app.runner import ReportRunner
 from src.domain.constants import CLI_ARG_FILES, CLI_ARG_REPORT
 from src.domain.enums import ExitCode
-from src.domain.exceptions import ReportNotFoundError, BaseReportError
+from src.domain.exceptions import BaseReportError
 
 
 def run_cli() -> int:
