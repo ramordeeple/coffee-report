@@ -7,8 +7,3 @@ from typing import List, Dict
 class ReportResult:
     headers: List[str]
     data: List[List]
-
-class ReportStrategy(ABC):
-    @abstractmethod
-    def generate(self, raw_data: List[Dict]) -> ReportResult:
-        pass
