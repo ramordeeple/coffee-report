@@ -4,7 +4,7 @@ import sys
 from tabulate import tabulate
 
 from src.app.runner import ReportRunner
-from src.domain.constants import CLI_ARG_FILES, CLI_ARG_REPORT
+from src.domain.constants import CLI_ARG_FILES, CLI_ARG_REPORT, REPORT_MEDIAN_COFFEE
 from src.domain.enums import ExitCode
 from src.domain.exceptions import BaseReportError
 
@@ -12,7 +12,7 @@ from src.domain.exceptions import BaseReportError
 def run_cli() -> int:
     parser = argparse.ArgumentParser(description="Student Report Tool")
     parser.add_argument(CLI_ARG_FILES, nargs="+", required=True, dest="files")
-    parser.add_argument(CLI_ARG_REPORT, default=True, dest="report")
+    parser.add_argument(CLI_ARG_REPORT, choices=[REPORT_MEDIAN_COFFEE], help="report type")
     args = parser.parse_args()
 
     try:
