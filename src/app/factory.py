@@ -1,4 +1,5 @@
 from src.domain.constants import REPORT_MEDIAN_COFFEE
+from src.domain.exceptions import ReportNotFoundError
 from src.domain.interfaces import ReportStrategy
 from src.domain.strategies import MedianCoffeeReport
 
@@ -11,7 +12,7 @@ class ReportFactory:
         strategy = cls._strategies.get(report_name)
         if not strategy:
             available = ", ".join(cls._strategies.keys())
-            raise ValueError(
+            raise ReportNotFoundError(
                 f"The report '{report_name} does not support. Available: {available}'"
             )
 
