@@ -11,3 +11,5 @@ REPORT_MEDIAN_COFFEE: Final[str] = "median_coffee"
 
 DECIMAL_PRECISION: Final[Decimal] = Decimal("0.01")
 DEFAULT_ROUNDING: Final[str] = ROUND_HALF_UP
+
+NOT_FOUND_DATA: Final[str] = "not_found_data"
